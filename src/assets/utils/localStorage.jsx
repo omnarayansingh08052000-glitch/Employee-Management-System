@@ -1,0 +1,241 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Arjun",
+    email: "e1@e.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Complete Report",
+        date: "2024-11-25",
+        description: "Complete the quarterly financial report.",
+        category: "Finance",
+        active: false,
+        completed: false,
+        newTask: true,
+        failed: false,
+      },
+      {
+        title: "Team Meeting",
+        date: "2024-11-26",
+        description: "Attend the weekly team meeting.",
+        category: "Meetings",
+        active: false,
+        completed: true,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "Update Database",
+        date: "2024-11-27",
+        description: "Update the customer database with new entries.",
+        category: "Data Entry",
+        active: false,
+        completed: false,
+        newTask: false,
+        failed: true,
+      },
+    ],
+    taskNumbers: {
+      active: 0,
+      completed: 1,
+      newTask: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 2,
+    firstName: "Priya",
+    email: "e2@e.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Create Presentation",
+        date: "2024-11-24",
+        description: "Prepare slides for the product launch presentation.",
+        category: "Marketing",
+        active: true,
+        completed: false,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "Client Follow-Up",
+        date: "2024-11-26",
+        description: "Follow up with client X regarding their recent order.",
+        category: "Sales",
+        active: false,
+        completed: true,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "Inventory Check",
+        date: "2024-11-28",
+        description: "Check inventory levels for Q4 stock.",
+        category: "Inventory",
+        active: false,
+        completed: false,
+        newTask: true,
+        failed: false,
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      completed: 1,
+      newTask: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 3,
+    firstName: "Ravi",
+    email: "e3@e.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Code Review",
+        date: "2024-11-23",
+        description: "Review code for the new authentication module.",
+        category: "Development",
+        active: false,
+        completed: false,
+        newTask: true,
+        failed: false,
+      },
+      {
+        title: "Bug Fixes",
+        date: "2024-11-25",
+        description: "Fix bugs reported by QA team.",
+        category: "Development",
+        active: true,
+        completed: false,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "API Documentation",
+        date: "2024-11-29",
+        description: "Write documentation for the new API endpoints.",
+        category: "Documentation",
+        active: false,
+        completed: true,
+        newTask: false,
+        failed: false,
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      completed: 1,
+      newTask: 1,
+      failed: 0,
+    },
+  },
+  {
+    id: 4,
+    firstName: "Sneha",
+    email: "e4@e.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Design Mockups",
+        date: "2024-11-23",
+        description: "Create design mockups for the client proposal.",
+        category: "Design",
+        active: false,
+        completed: false,
+        newTask: true,
+        failed: false,
+      },
+      {
+        title: "Social Media Posts",
+        date: "2024-11-24",
+        description: "Schedule posts for the upcoming campaign.",
+        category: "Marketing",
+        active: false,
+        completed: true,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "Employee Feedback",
+        date: "2024-11-26",
+        description: "Gather employee feedback for the HR team.",
+        category: "HR",
+        active: false,
+        completed: false,
+        newTask: false,
+        failed: true,
+      },
+    ],
+    taskNumbers: {
+      active: 0,
+      completed: 1,
+      newTask: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 5,
+    firstName: "Vikas",
+    email: "e5@e.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Server Maintenance",
+        date: "2024-11-23",
+        description: "Perform routine maintenance on the server.",
+        category: "IT",
+        active: false,
+        completed: false,
+        newTask: true,
+        failed: false,
+      },
+      {
+        title: "Employee Training",
+        date: "2024-11-25",
+        description: "Conduct training for new hires.",
+        category: "Training",
+        active: false,
+        completed: true,
+        newTask: false,
+        failed: false,
+      },
+      {
+        title: "System Upgrade",
+        date: "2024-11-30",
+        description: "Upgrade the company's internal systems.",
+        category: "IT",
+        active: true,
+        completed: false,
+        newTask: false,
+        failed: false,
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      completed: 1,
+      newTask: 1,
+      failed: 0,
+    },
+  },
+];
+
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+
+  return { employees, admin };
+};

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Citation Network Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<h1>Dynamic Citation Network</h1>
+
+<div class="box">
+    <h2>Upload Research Paper</h2>
+    <input type="file" id="fileInput" onchange="loadExcel(event)">
+</div>
+
+<div class="box">
+    <h3>Add New Paper</h3>
+    <input type="text" id="paperID" placeholder="Paper ID">
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="author" placeholder="Author">
+    <input type="text" id="abstract" placeholder="Abstract">
+    <input type="text" id="cites" placeholder="Cites (P1,P2)">
+    <button type="button" onclick="addPaper()">Add Paper</button>
+</div>
+
+<div class="box">
+    <h3>Citation Network View</h3>
+    <div id="network" style="height:300px; border:1px solid gray;"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

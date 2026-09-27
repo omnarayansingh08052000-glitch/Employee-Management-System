@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  color: #fff;
+}
+body {
+  background-color: #111;
+}
+#tasklist::-webkit-scrollbar {
+  display: none;
+}
+input,
+textarea {
+  background-color: #000; /* Ensure a visible background */
+  color: #fff; /* Make text visible */
+  border: 1px solid #fff; /* Ensure borders are visible */
+  outline: none; /* Optional, for custom focus styles */
+  padding: 8px; /* Add padding for better usability */
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4caf50; /* Add a focus effect */
+}
